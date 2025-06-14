@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@auth/core": "^0.39.1",
+    "@iconify-icons/tabler": "^1.2.95",
+    "@iconify/react": "^6.0.0",
     "@tanstack/react-query": "^5.80.7",
     "@tanstack/react-query-devtools": "^5.80.7",
     "@trpc/client": "^11.4.0",
@@ -33,6 +35,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "daisyui": "^5.0.43",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "eslint-config-prettier": "^10.1.5",
