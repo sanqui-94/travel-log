@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import AppNavBar from "../AppNavBar.tsx";
+import AppNavBar from "../navigation/AppNavBar.tsx";
 
 export default function Layout() {
   return (

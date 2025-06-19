@@ -1,5 +1,6 @@
 import { Link } from "react-router";
-import LoginButton from "./buttons/LoginButton.tsx";
+import LoginButton from "../buttons/LoginButton.tsx";
+import ThemeSwapper from "../buttons/ThemeSwapper.tsx";
 
 export default function AppNavBar() {
   return (
@@ -10,6 +11,7 @@ export default function AppNavBar() {
         </Link>
       </div>
       <div className="navbar-end">
+        <ThemeSwapper />
         <LoginButton />
       </div>
     </div>
