@@ -1,6 +1,8 @@
 import LoginButton from "../buttons/LoginButton.tsx";
+import { env } from "../../../lib/env.ts";
 
 export default function Home() {
+  console.log(env);
   return (
     <div className="hero bg-base-300 container mx-auto mt-4">
       <div className="hero-content text-center min-h-96">
