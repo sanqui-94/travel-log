@@ -17,14 +17,11 @@ jobs:
           node-version: "22.x"
       - name: Install dependencies
         run: npm install
-        working-directory: ./client
 
       - name: Build client
         run: npm run build
-        working-directory: ./client
         env:
           VITE_TEST_STRING: $VITE_TEST_STRING
 
       - name: Run linter on client
         run: npm run lint
-        working-directory: ./client
