@@ -1,6 +1,23 @@
+"use client";
+import signIn from "@/lib/auth-client";
+import { useAuthStore } from "@/stores/authStore";
+
 export default function LoginButton() {
+  const loading = useAuthStore((s) => s.loading);
+  const setLoading = useAuthStore((s) => s.setLoading);
+
+  const handleLogin = async () => {
+    setLoading(true);
+    try {
+      await signIn();
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <button className="btn border-black bg-black text-white">
+    <button className="btn border-black bg-black text-white" onClick={handleLogin}>
+      {loading ? <span className="loading loading-spinner loading-sm"></span> : null}
       <svg
         aria-label="GitHub logo"
         width="16"
