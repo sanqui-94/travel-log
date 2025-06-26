@@ -16,7 +16,12 @@ export default function LoginButton() {
   };
 
   return (
-    <button className="btn border-black bg-black text-white" onClick={handleLogin}>
+    <button
+      className="btn border-black bg-black text-white"
+      onClick={handleLogin}
+      disabled={loading}
+      aria-label={loading ? "Logging in with GitHub" : "Login with GitHub"}
+    >
       {loading ? <span className="loading loading-spinner loading-sm"></span> : null}
       <svg
         aria-label="GitHub logo"
