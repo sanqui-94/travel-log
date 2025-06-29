@@ -1,28 +1,21 @@
 "use client";
-import signIn from "@/lib/auth-client";
-import { useAuthStore } from "@/stores/authStore";
+
+import { useAuth } from "@/hooks/use-auth";
 
 export default function LoginButton() {
-  const loading = useAuthStore((s) => s.loading);
-  const setLoading = useAuthStore((s) => s.setLoading);
+  const { login, isLoading } = useAuth();
 
   const handleLogin = async () => {
-    setLoading(true);
-    try {
-      await signIn();
-    } finally {
-      setLoading(false);
-    }
+    await login();
   };
 
   return (
     <button
       className="btn border-black bg-black text-white"
       onClick={handleLogin}
-      disabled={loading}
-      aria-label={loading ? "Logging in with GitHub" : "Login with GitHub"}
+      disabled={isLoading}
+      aria-label={isLoading ? "Logging in with GitHub" : "Login with GitHub"}
     >
-      {loading ? <span className="loading loading-spinner loading-sm"></span> : null}
       <svg
         aria-label="GitHub logo"
         width="16"
