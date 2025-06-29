@@ -3,12 +3,15 @@ import Link from "next/link";
 import LoginButton from "@/app/components/buttons/LoginButton";
 import Image from "next/image";
 import { useAuth } from "@/hooks/use-auth";
+import { useRouter } from "next/navigation";
 
 export default function NavBar() {
   const { user, isAuthenticated, isLoading, logout } = useAuth();
+  const router = useRouter();
 
   async function handleLogout() {
     await logout();
+    router.push("/logout");
   }
 
   if (isLoading) {
@@ -41,8 +44,8 @@ export default function NavBar() {
                 <div className="avatar">
                   <div className="w-8 rounded-full">
                     <Image
-                      width={24}
-                      height={24}
+                      width={32}
+                      height={32}
                       className="rounded-full"
                       src={user.image}
                       alt={user?.name ?? "User avatar"}

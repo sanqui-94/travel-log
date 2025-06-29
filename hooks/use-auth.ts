@@ -1,7 +1,6 @@
 import authClient, { signIn } from "@/lib/auth-client";
 import { useAuthStore } from "@/stores/authStore";
 import { useEffect } from "react";
-import { redirect } from "next/navigation";
 
 export const useAuth = () => {
   const { data: session, isPending } = authClient.useSession();
@@ -33,13 +32,7 @@ export const useAuth = () => {
   };
 
   const logout = async () => {
-    await authClient.signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          redirect("/logout");
-        },
-      },
-    });
+    await authClient.signOut();
   };
 
   return { user, isLoading, isAuthenticated, login, logout };

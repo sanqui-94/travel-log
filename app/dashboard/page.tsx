@@ -15,7 +15,7 @@ export default async function Dashboard() {
     return (
       <div className="container">
         <h1 className="text-xl">Hey Man, welcome to the dashboard</h1>
-        <h1>Welcome {session.user.name}</h1>
+        <h2>Welcome {session.user.name}</h2>
       </div>
     );
   }
