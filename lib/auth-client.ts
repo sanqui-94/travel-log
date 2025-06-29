@@ -1,7 +1,7 @@
 import { createAuthClient } from "better-auth/react";
 const authClient = createAuthClient();
 
-const signIn = async () => {
+export const signIn = async () => {
   await authClient.signIn.social({
     provider: "github",
     callbackURL: "/dashboard",
@@ -9,4 +9,4 @@ const signIn = async () => {
   });
 };
 
-export default signIn;
+export default authClient;

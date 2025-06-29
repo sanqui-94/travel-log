@@ -16,6 +16,7 @@
     "better-auth": "^1.2.10",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.44.2",
+    "immer": "^10.1.1",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

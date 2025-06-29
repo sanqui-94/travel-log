@@ -1,7 +1,22 @@
-export default function Dashboard() {
-  return (
-    <div className="container">
-      <p className="text-xl">Hey Man, welcome to the dashboard</p>
-    </div>
-  );
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+
+export default async function Dashboard() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!session) {
+    redirect("/");
+  }
+
+  if (session) {
+    return (
+      <div className="container">
+        <h1 className="text-xl">Hey Man, welcome to the dashboard</h1>
+        <h2>Welcome {session.user.name}</h2>
+      </div>
+    );
+  }
 }
