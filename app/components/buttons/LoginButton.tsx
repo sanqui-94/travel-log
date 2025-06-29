@@ -1,12 +1,16 @@
 "use client";
 
 import { useAuth } from "@/hooks/use-auth";
+import { useState } from "react";
 
 export default function LoginButton() {
-  const { login, isLoading } = useAuth();
+  const { login } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async () => {
+    setIsLoading(true);
     await login();
+    setIsLoading(false);
   };
 
   return (
@@ -16,6 +20,7 @@ export default function LoginButton() {
       disabled={isLoading}
       aria-label={isLoading ? "Logging in with GitHub" : "Login with GitHub"}
     >
+      {isLoading ? <span className="loading loading-spinner loading-sm"></span> : null}
       <svg
         aria-label="GitHub logo"
         width="16"

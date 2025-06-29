@@ -53,7 +53,7 @@ export default function NavBar() {
                   </div>
                 </div>
               )}
-              {user?.name}
+              {user?.name ?? user?.email ?? "User"}
             </div>
 
             <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-64 p-2 shadow">
