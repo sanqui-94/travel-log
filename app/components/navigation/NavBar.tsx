@@ -4,6 +4,7 @@ import LoginButton from "@/app/components/buttons/LoginButton";
 import Image from "next/image";
 import { useAuth } from "@/hooks/use-auth";
 import { useRouter } from "next/navigation";
+import LogoutButton from "@/app/components/buttons/LogoutButton";
 
 export default function NavBar() {
   const { user, isAuthenticated, isLoading, logout } = useAuth();
@@ -58,9 +59,7 @@ export default function NavBar() {
 
             <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-64 p-2 shadow">
               <li>
-                <button onClick={handleLogout} className="text-error">
-                  Logout
-                </button>
+                <LogoutButton onClick={handleLogout} />
               </li>
             </ul>
           </div>
