@@ -1,6 +1,6 @@
 "use client";
 import LogoutButton from "@/app/components/buttons/LogoutButton";
-import MapIcon from "@heroicons/react/24/solid//MapIcon";
+import MapIcon from "@heroicons/react/24/solid/MapIcon";
 import PlusCircleIcon from "@heroicons/react/24/solid/PlusCircleIcon";
 import ChevronLeftIcon from "@heroicons/react/24/solid/ChevronLeftIcon";
 import ChevronRightIcon from "@heroicons/react/24/solid/ChevronRightIcon";
