@@ -3,17 +3,10 @@ import Link from "next/link";
 import LoginButton from "@/app/components/buttons/LoginButton";
 import Image from "next/image";
 import { useAuth } from "@/hooks/use-auth";
-import { useRouter } from "next/navigation";
 import LogoutButton from "@/app/components/buttons/LogoutButton";
 
 export default function NavBar() {
-  const { user, isAuthenticated, isLoading, logout } = useAuth();
-  const router = useRouter();
-
-  async function handleLogout() {
-    await logout();
-    router.push("/logout");
-  }
+  const { user, isAuthenticated, isLoading } = useAuth();
 
   if (isLoading) {
     return (
@@ -59,7 +52,7 @@ export default function NavBar() {
 
             <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-64 p-2 shadow">
               <li>
-                <LogoutButton onClick={handleLogout} />
+                <LogoutButton />
               </li>
             </ul>
           </div>
